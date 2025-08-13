@@ -1,0 +1,5 @@
+LSB_VERSION="0.12"
+DISTRIB_ID="Tridentu 2"
+DISTRIB_RELEASE="1.2.5"
+DISTRIB_CODENAME="Alpha 4"
+DISTRIB_DESCRIPTION="A distro based on LFS with its own package manager"

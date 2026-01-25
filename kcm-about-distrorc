@@ -3,8 +3,8 @@
 [General]
 LogoPath=/usr/share/pixmaps/tridentu.png
 Website=https://tridentu.github.io
-Version=1.3
-Variant=Alpha 5
+Version=1.4
+Variant=Alpha 6
 UseOSReleaseVersion=true # controls if os-release's VERSION is used (default=false = use VERSION_ID)
 # Scripts to run to get extra software data to show. The scripts need to take care of l10n. When en_US output
 # is required the LANGUAGE environment variable will contain **at least** en_US. Simply follow the environment.

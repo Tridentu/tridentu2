@@ -1,0 +1,30 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "tridentugroup@gmail.com",
+                "Name": "Tridentu Group"
+            }
+        ],
+        "Category": "Global Themes (Plasma 6)",
+        "ServiceTypes": [
+            "Plasma/LookAndFeel"
+        ],
+        "EnabledByDefault": true,
+        "Name": "Tridentu Dark",
+        "Description": "Dark theme for Tridentu 2 (KDE Version)",
+        "Id": "TridentuDark",
+        "Version": "0.1",
+        "License": "LGPL 2.1",
+        "Website": "https://tridentu.github.io",
+        "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+        "X-Plasma-APIVersion": "2"
+    },
+     "X-KPackage-Dependencies": [
+             "kns://xcursor.knsrc/api.kde-look.org/1571937"
+
+
+    ]
+}
+

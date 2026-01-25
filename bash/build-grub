@@ -1,0 +1,18 @@
+#!/bin/env bash
+
+kernel=$1
+
+if [ -z $kernel ]; then
+    kernel="$(uname -r)"
+fi
+
+if [ $EUID -ne 0 ]; then
+    echo "Please run build-grub as root."
+    exit 1
+fi
+
+echo "Creating Initramfs..."
+dracut --kver $kernel -f > /dev/null 2>&1
+echo "Updating GRUB..."
+grub-mkconfig -o /boot/grub/grub.cfg > /dev/null 2>&1
+echo "Done."

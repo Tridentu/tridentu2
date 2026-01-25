@@ -1,0 +1,14 @@
+home/tridentulive
+usr/lib/libcalamares*.so*
+usr/include/libcalamares
+usr/lib/cmake/Calamares
+usr/lib/calamares
+usr/share/calamares
+calamares-python.mo
+etc/calamares
+usr/bin/calamares
+var/mail/tridentulive
+etc/sudoers.d/iso-only
+etc/systemd/system/getty@tty1.service
+usr/lib/python3.13/site-packages/tridentuinstall
+usr/bin/tridentuinstall

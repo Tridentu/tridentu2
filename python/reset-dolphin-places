@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+from contextlib import contextmanager
+from pathlib import Path
+
+@contextmanager
+def load_xbel_template(temp_name, **kwargs):
+    loader = FileSystemLoader("/usr/share/xml/xbel")
+    env = Environment(
+        loader=loader,
+        autoescape=select_autoescape()
+    )
+    try:
+        template = env.get_template(temp_name + ".xbelt")
+        yield template.render(kwargs)
+    finally:
+        pass
+
+
+def reset_places():
+    print("Resetting place file...")
+    places = {
+        "home": "file://" + str(Path.home())
+    }
+    places["apps"] = places["home"] + "/Applications"
+    places["documents"] = places["home"] + "/Documents"
+    places["desktop"] = places["home"] + "/Desktop"
+    places["downloads"] = places["home"] + "/Downloads"
+    places["music"] = places["home"] + "/Music"
+    places["pictures"] = places["home"] + "/Pictures"
+    places["public"] = places["home"] + "/Public"
+    places["videos"] = places["home"] + "/Videos"
+
+
+    with load_xbel_template("user-places", places_home=places["home"], places_apps=places["apps"], places_documents=places["documents"], places_desktop=places["desktop"], places_downloads=places["downloads"], places_music=places["music"], places_pictures=places["pictures"], places_public=places["public"], places_videos=places["videos"]) as temp_str:
+        with open(str(Path.home()) + "/.local/share/user-places.xbel", "w") as places_file:
+            places_file.write(temp_str)
+
+    print("Places file reset.")
+
+if __name__ == "__main__":
+    reset_places()

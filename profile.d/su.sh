@@ -1,6 +1,3 @@
-
-set -o shwordsplit
-
 as_root()
 {
   if   [ $EUID = 0 ];        then $*
@@ -10,7 +7,3 @@ as_root()
 }
 
 export -f as_root
-
-
-export ZSH_THEME="robbyrussell"
-source zshroot/index.zsh

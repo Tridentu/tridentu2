@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: GPL-2.0
+# SPDX-URL: https://spdx.org/licenses/GPL-2.0.html
+[Unit]
+Description=nftables
+Documentation=man:nftables(8)
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/nftablesctl start
+ExecStop=/usr/bin/nftablesctl stop
+
+[Install]
+WantedBy=multi-user.target

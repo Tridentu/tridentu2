@@ -1,0 +1,114 @@
+#!/bin/sh
+#
+# SPDX-License-Identifier: GPL-2.0
+# SPDX-URL: https://spdx.org/licenses/GPL-2.0.html
+
+set -e
+which nft > /dev/null
+
+usage() {
+	name=$(basename "$0")
+	echo "Usage: $name start|stop|restart|list"
+	echo
+	echo "       $name start     load the rules"
+	echo "       $name stop      flush the rules"
+	echo "       $name restart   reload the rules"
+	echo "       $name list      list the loaded rules"
+	echo "       $name save      write loaded rules to stdout in saveable format"
+	echo
+	echo "Using --confirm in the following manner will prompt you to check if"
+	echo "your network connection is working fine:"
+	echo
+	echo "       $name start --confirm"
+	echo "       $name restart --confirm"
+}
+
+if [ "$(id -u)" -ne 0 ]
+then
+	echo "Warning: Only root can run this script" >&2
+	echo
+	usage
+	exit 1
+fi
+
+if [ ! -d /etc/nftables ]
+then
+	echo "Rules directory /etc/nftables does not exist" >&2
+	exit 1
+fi
+
+ctrl_c() {
+	echo
+	echo "nftables rules successfully applied"
+	exit 0
+}
+
+nft_list_protocol() {
+	for T in $(nft list tables "$1" | cut -d ' ' -f 2)
+	do
+		nft list table "$1" "$T"
+	done
+}
+
+nftables_start() {
+	find /etc/nftables -maxdepth 1 -type f -name '*.rules' -print0 | \
+		sort -z | xargs --null --no-run-if-empty --max-args=1 nft -f
+
+	if [ -t 0 ] && [ "$1" = "--confirm" ]
+	then
+		echo "Please confirm that your network connection is working and press Ctrl+C on success"
+		trap ctrl_c INT
+
+		sleep 20
+
+		echo "No response, flushing rules"
+		nftables_stop
+	fi
+}
+
+nftables_list() {
+	for P in ip inet ip6 arp bridge
+	do
+		nft_list_protocol "$P"
+	done
+}
+
+nftables_stop() {
+	nft flush ruleset
+}
+
+nftables_restart() {
+	nftables_stop
+	nftables_start "$1"
+}
+
+case "$1" in
+	start)
+		nftables_start "$2"
+		;;
+
+	stop)
+		nftables_stop
+		;;
+
+	restart)
+		nftables_restart "$2"
+		;;
+
+	list)
+		nftables_list
+		;;
+
+	save)
+		echo "#!/usr/sbin/nft -f"
+		echo
+		echo "flush ruleset"
+		echo
+		nft list ruleset
+		;;
+
+	*)
+		usage
+		exit 1
+		;;
+esac

@@ -271,7 +271,7 @@
 !*allowTitleOps: false
 !*allowWindowOps: false
 *VT100*locale: true
-*VT100*faceName: Monospace
+*VT100*faceName: Monaspace Argon NF
 *VT100*faceSize: 10
 *backarrowKeyIsErase: true
 *ptyInitialErase: true

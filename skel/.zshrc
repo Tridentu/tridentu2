@@ -9,7 +9,7 @@ as_root()
   fi
 }
 
-export -f as_root
+export  as_root
 
 
 export ZSH_THEME="robbyrussell"

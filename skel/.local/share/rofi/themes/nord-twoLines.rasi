@@ -2,7 +2,7 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "Fira Code 10";
+    font:   "Cabin 16";
 
     nord0:     #2e3440;
     nord1:     #3b4252;
@@ -33,16 +33,29 @@
     spacing:    0px;
 }
 
+mode-switcher {
+   enabled: true;
+   spacing: 10px;
+   border: 2px solid;
+   border-color: @nord12;
+}
+
 window {
     background-color:   @nord0;
-
-    location:   north;
-    width:      100%;
+    border-radius: 7px;
+    border: 2px solid;
+    border-color: @nord6;
+    location:   center;
+    anchor: center;
+    enabled: true;
+    width:      25%;
 }
 
 inputbar {
     padding:    2px 8px;
-    spacing:    8px;
+    spacing:    10px;
+    border: 0px 0px 2px 0px solid;
+    border-color: @nord6;
     children:   [ prompt, entry ];
 }
 
@@ -51,21 +64,51 @@ prompt, entry, element-text, element-icon {
 }
 
 prompt {
-    text-color: @accent-color;
+    enabled: true;
+    background-color: @nord0;
+    text-color: @nord6;
 }
 
 listview {
-    lines:      1;
-    columns:    4;
+    lines:      10;
+    columns:    1;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 10px;
+    padding: 3px;
+    scrollbar: true;
+    reverse: false;
+    dynamic: true;
+    cycle: true;
+    border-color: @nord11;
+    background-color: @nord3;
 }
 
+scrollbar {
+   handle-width: 8px;
+   handle-color: @nord11;
+   border-radius: 5px;
+   background-color: @nord6;
+}
+
+
+
 element {
-    padding:    1px 8px;
+    enabled: true;
+    padding:    5px 10px;
     spacing:    4px;
+    margin: 2px;
+    border: 2px solid;
+    border-color: @nord11;
+    background-color: @nord0;
+    text-color: @nord6;
+    border-radius: 1%;
 }
 
 element normal urgent {
-    text-color: @nord13;
+    text-color: @nord6;
+    background-color: @nord11;
 }
 
 element normal active {
@@ -94,8 +137,16 @@ element selected active {
 
 element-icon {
     size:   0.75em;
+    cursor: inherit;
+    background-color: transparent;
+    vertical-align: 0.5;
+    horizontal-align: 0;
 }
 
 element-text {
     text-color: inherit;
+    highlght: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0;
 }

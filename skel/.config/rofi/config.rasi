@@ -1,4 +1,50 @@
 
 
+configuration {
+   modi: "drun,run,filebrowser,window";
+   case-sensitive: false;
+   show-icons: true;
+   normalize-match: true;
+   icon-theme: "Papirus";
 
-@theme "nord-twoLines"
+   matching: "normal";
+   tokenize: true;
+
+   drun-categories: "";
+   drun-match-fields: "name,generic,exec,categories,keywords";
+   drun-display-format: "{name} [<span size='small'><b>({generic})</b></span>] ";
+   drun-show-actions: false;
+   drun-url-launcher: "xdg-open";
+
+   drun {
+	parse-user: true;
+	parse-system: true;
+   }
+
+   run-command: "{cmd}";
+   run-list-command: "";
+   run-shell-command: "{terminal} -e {cmd}";
+
+   run,drun {
+      fallback-icon: "application-x-addon";
+   }
+
+   window-match-fields: "title,class,role,name,desktop";
+   window-command: "wmctrl -i -R {window}";
+   window-format: "{w} - {c} [{t:0}]";
+
+   window-thumbnail: false;
+
+   combi-modi: "drun,window";
+   combi-hide-mode-prefix: false;
+   combi-display-format: "{mode} {text}";
+
+   display-window: "Windows";
+   display-windowcd: "Window CD";
+   display-drun: "Open";
+   display-combi: "Launch...";
+
+   terminal: "alacritty";
+   font: "Cabin 12";
+   sort: true;
+}

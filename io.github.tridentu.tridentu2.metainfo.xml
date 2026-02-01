@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="operating-system">
     <id>io.github.tridentu.tridentu2</id>
-    <name>Tridentu 2 GNU/Linux</name>
+    <name>Tridentu 2 Linux</name>
     <summary>An OS built from LFS</summary>
     <description>
         <p>
-            Tridentu 2 is a free operating system (OS) for your computer that is built from LFS. LFS is Linux From Scratch, a book that provides a way to build a Linux OS literally from scratch. An operating system is the set of basic programs and utilities that make your computer run.
+            Tridentu 2 is a free operating system (OS) for your computer that is built from LFS. 
+            LFS is Linux From Scratch, a book that provides a way to build a Linux OS literally from scratch. 
+            An operating system is the set of basic programs and utilities that make your computer run.
         </p>
         ...
     </description>
@@ -17,9 +19,9 @@
     ...
 
     <releases>
-       <release version="1.3" type="release">
+       <release version="1.5" type="release">
             <description>
-                <p>The first stable release of Tridentu 2. Contains touchpad support, Linux 6.13.4 and more.</p>
+                <p>The second stable release of Tridentu 2. Contains more flavors than 1.3 and 1.4.</p>
             </description>
         </release>
     </releases>

@@ -1,0 +1,102 @@
+* {
+  font-family: Cabin;
+  font-size: 16px;
+}
+
+.tomohawkBar  {
+  background-color: #2E3440;
+  color: #ECEFF4;
+}
+
+.tomohawkClock {
+   margin-left: 5px;
+   margin-right: 5px;
+}
+
+menubutton.tomohawkClock > button {
+   background-color: #81A1C1;
+   margin-top: 1px;   
+   margin-bottom: 1px;
+   border-radius: 3px;
+   color: #2E3440; 
+   font-size: 20px;
+}
+
+calendar {
+  background-color: #E5E9F0;
+  color: #2E3440;
+  border-radius: 6px;
+}
+
+calendar > grid > .day-number:selected {
+   color: #BF616A;
+   background-color: #3B4252;
+}
+
+
+calendar > grid > .day-name {
+  font-weight: 500;
+  color: #3B4252;
+  background-color: #8FBCBB;
+}
+
+calendar .today {
+   background-color: #B48EAD;
+}
+
+calendar > grid > .other-month {
+   color: #EBCB8B;
+   background-color: #2E3440;
+} 
+
+.tomohawkBQS {
+  background-color: #BF616A;
+  border-radius: 6px;
+  margin-left: 5px;
+  margin-right: 5px; 
+}
+
+
+.tomohawkBQS > label {
+   font-size: 20px;
+}
+
+.tomohawkNetwork {
+  background-color: #D08770;
+  color: #D8DEE9;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.tomohawkNetwork > label {
+  font-size: 20px;
+}
+
+.tomohawkNetwork > button > label {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.tomohawkPowerProfiles {
+   font-family: Monaspace Argon NF;
+   font-size: 24px;
+   background-color: #EBCB8B;
+   color: #2E3440;
+   padding: 5px;
+}
+
+.tomohawkProfileBtn {
+  background-color: #ECEFF4;
+  margin-bottom: 2.5px;
+  margin-top: 2.5px;
+  padding: 5px;
+  border: 3px #2E3440;
+  border-radius: 5px;
+}
+
+
+.tomohawkClock > button > label {
+   margin-left: 5px;
+   margin-right: 5px;
+}

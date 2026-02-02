@@ -1,0 +1,21 @@
+#!/bin/bash
+
+homeDir=$HOME
+
+
+run_tomo(){
+   ags run $homeDir/.config/tomohawk/tomohawk.tsx
+}
+
+command=$1
+
+case $command in
+   toggle)
+     element=$2
+     ags toggle -i tomohawk "tomohawk-$element"
+   ;;
+   *)
+     run_tomo
+   ;; 
+
+esac

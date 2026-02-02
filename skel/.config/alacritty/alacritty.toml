@@ -1,0 +1,32 @@
+
+[general]
+
+import = [
+   "~/.config/alacritty/themes/nordfox.toml"
+]
+
+[window]
+padding = { x  = 10 , y = 10 }
+dynamic_padding = true
+decorations = "Full"
+blur = true
+dynamic_title = true
+decorations_theme_variant = "Dark"
+
+[font]
+normal = { family = "Monaspace", style = "Regular" } 
+
+
+[colors]
+cursor =  { text = "#ECEFF4",  cursor =  "#D8DEE9" }
+
+[bell]
+animation = "EaseOut"
+duration = 0.5
+color = "#ECEFF4"
+
+
+[cursor]
+share = "Underline"
+blinking = "On"
+

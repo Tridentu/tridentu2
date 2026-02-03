@@ -1,0 +1,49 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "230b9c6"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "iynaix/time-travel"
+rev = "aaec6e2"
+hash = "3d52b2b88c91a4ece2f7ed68ff39bb7b"
+
+[[plugin.deps]]
+use = "boydaihungst/simple-tag"
+rev = "a971d5a"
+hash = "bd921661ea2be141a1ff182ed81d7012"
+
+[[plugin.deps]]
+use = "MasouShizuka/close-and-restore-tab"
+rev = "5047217"
+hash = "bb24648b1f96f1cef8c1543742189aad"
+
+[[plugin.deps]]
+use = "uhs-robert/recycle-bin"
+rev = "fa68711"
+hash = "8714306b5cac6359edbacbf545fbd691"
+
+[[plugin.deps]]
+use = "boydaihungst/restore"
+rev = "4eda0bf"
+hash = "778941e7f1ebbacd60f4e254bb3c51de"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "230b9c6"
+hash = "9ad20d763df07ce40fd09de549d914b0"
+
+[[plugin.deps]]
+use = "KKV9/command"
+rev = "523e6a5"
+hash = "a7e5577f7bae80fa064e416c09ac62a4"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "c5d4b48"
+hash = "e6e98d12b1648d1894c2b560d85eeaa7"
+
+[[flavor.deps]]
+use = "AdithyanA2005/nord"
+rev = "bdf0bd4"
+hash = "816970e00d643d3e8213b430d2148aec"

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Tridentu2GTK
+Comment=Tridentu 2 GTK
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Tridentu2GTK
+MetacityTheme=Tridentu2GTK
+ButtonLayout=close,minimize,maximize
+IconTheme=Papirus

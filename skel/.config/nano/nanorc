@@ -1,0 +1,47 @@
+include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano/extra/*.nanorc"
+include "~/.nano/*.nanorc"
+
+set linenumbers
+set tabsize 4
+set tabstospaces
+set autoindent
+set softwrap
+
+set undo
+
+set backup
+
+set casesensitive off
+set searchhighlight
+
+set constantshow
+
+set mouse
+
+set scrollercolor blue,normal
+set numbercolor yellow,normal
+
+set matchbrackets
+
+set whitespace "all"
+
+set titlecolor  brightwhite,blue
+
+set smooth
+
+set smarthome
+
+set multibuffer
+
+bind F1 help all
+bind ^H replace main
+
+bind M-U undo main
+bind M-R redo main
+
+bind ^C copy main
+bind ^V paste main
+bind ^X cut main
+
+

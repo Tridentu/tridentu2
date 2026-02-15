@@ -36,6 +36,18 @@ function THClock({}){
    );   
 }
 
+function THStart({}) {
+   let openMenu = () => {
+      execAsync(["rofi", "-show", "combi", "-theme", "~/.local/share/rofi/themes/nord-twoLines.rasi"]);
+   };
+
+   return (
+     <button icon-name="xfdashboard" class="tomohawkClock" onClicked={() => openMenu()}>
+
+     </button>
+   );
+}
+
 function THNetwork({}){
 
   const net = Network.get_default()
@@ -61,15 +73,14 @@ function THBQS({}) {
 	powerprofiles.set_active_profile(profile);
   }
 	
-  const percentage = battery.percentage
-  const message = `${Math.floor(percentage * 100)}%`
+  const percentage = createBinding(battery, "percentage")
   let iconName = createBinding(battery, "batteryIconName");
   
   return (
-    <menubutton class="tomohawkBQS" visible={createBinding(battery, "isPresent")} tooltip-text={message}>
+    <menubutton class="tomohawkBQS" visible={createBinding(battery, "isPresent")} tooltip-text={percentage((p) => `${Math.floor(p * 100)}%`)} >
       <box class="tomohawkBQS">
         <Gtk.Image icon-name={iconName} icon-size="1" />
-        <label label={message} />
+        <label label={percentage((p) => `${Math.floor(p * 100)}%`)} />
       </box>
       <popover>
 	<box class="tomohawkPowerProfiles" orientation={Gtk.Orientation.VERTICAL}>
@@ -127,7 +138,7 @@ function THMain(){
      <window name="tomohawk-bar" application={app}  visible class="tomohawkBar" anchor={TOP | LEFT | RIGHT}>
            <centerbox>
            <box $type="start">
-
+		<THStart />
            </box>
             <box $type="end">
                <THClock />

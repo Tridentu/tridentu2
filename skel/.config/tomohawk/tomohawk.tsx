@@ -4,6 +4,7 @@ import Gdk from "gi://Gdk?version=4.0"
 import Gtk from "gi://Gtk?version=4.0"
 import Adw from "gi://Adw"
 import Pango from "gi://Pango"
+import { Variable } from "astal"
 import { Astal } from "ags/gtk4"
 import { createPoll } from "ags/time"
 import { createBinding, createState } from "ags"
@@ -14,6 +15,7 @@ import Battery from "gi://AstalBattery"
 import Network from "gi://AstalNetwork"
 import PowerProfiles from "gi://AstalPowerProfiles"
 import Notifd from "gi://AstalNotifd"
+import Tray from "gi://AstalTray"
 
 import SCSS from  "./tomohawk.scss"
 
@@ -37,12 +39,19 @@ function THClock({}){
 }
 
 function THStart({}) {
-   let openMenu = () => {
-      execAsync(["rofi", "-show", "combi", "-theme", "~/.local/share/rofi/themes/nord-twoLines.rasi"]);
+   let openMenu = (typeOfProgram) => {
+     switch(typeOfProgram) {
+        case "rofi":
+          execAsync(["rofi", "-show", "combi", "-theme", "~/.local/share/rofi/themes/nord-twoLines.rasi"]);
+          break;
+        case "ulauncher":
+          execAsync(["ulauncher"]);
+        break;
+      };
    };
 
    return (
-     <button icon-name="xfdashboard" class="tomohawkClock" onClicked={() => openMenu()}>
+     <button icon-name="xfdashboard" class="tomohawkClock" onClicked={() => openMenu("ulauncher")}>
 
      </button>
    );
@@ -129,6 +138,21 @@ interface NotificationProps {
     notification: Notifd.Notification
 }
 
+function THTray() {
+  const tray = Tray.get_default()
+  return (
+    <box>
+      {bind(tray, "items").map(item => {
+         <button tooltipMarkup={bind(item, "tooltipMarkup")}
+           onClickRelease = {(_, btn) => item.action(btn)}>
+              <icon gicon={bind(item, "gicon")} />
+           </button>
+      })}
+    </box>
+  )
+}
+
+
 
 
        
@@ -138,7 +162,7 @@ function THMain(){
      <window name="tomohawk-bar" application={app}  visible class="tomohawkBar" anchor={TOP | LEFT | RIGHT}>
            <centerbox>
            <box $type="start">
-		<THStart />
+		           <THStart />
            </box>
             <box $type="end">
                <THClock />

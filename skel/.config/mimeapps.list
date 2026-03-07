@@ -1,0 +1,24 @@
+[Default Applications]
+x-scheme-handler/http=userapp-Zen-9AKRK3.desktop
+x-scheme-handler/https=userapp-Zen-9AKRK3.desktop
+x-scheme-handler/chrome=userapp-Zen-9AKRK3.desktop
+text/html=userapp-Zen-9AKRK3.desktop
+application/x-extension-htm=userapp-Zen-9AKRK3.desktop
+application/x-extension-html=userapp-Zen-9AKRK3.desktop
+application/x-extension-shtml=userapp-Zen-9AKRK3.desktop
+application/xhtml+xml=userapp-Zen-9AKRK3.desktop
+application/x-extension-xhtml=userapp-Zen-9AKRK3.desktop
+application/x-extension-xht=userapp-Zen-9AKRK3.desktop
+inode/directory=thunar.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Zen-9AKRK3.desktop;userapp-Zen-QHGMK3.desktop;
+x-scheme-handler/https=userapp-Zen-9AKRK3.desktop;userapp-Zen-QHGMK3.desktop;
+x-scheme-handler/chrome=userapp-Zen-9AKRK3.desktop;userapp-Zen-QHGMK3.desktop;
+text/html=userapp-Zen-QHGMK3.desktop;
+application/x-extension-htm=userapp-Zen-QHGMK3.desktop;
+application/x-extension-html=userapp-Zen-QHGMK3.desktop;
+application/x-extension-shtml=userapp-Zen-QHGMK3.desktop;
+application/xhtml+xml=userapp-Zen-QHGMK3.desktop;
+application/x-extension-xhtml=userapp-Zen-QHGMK3.desktop;
+application/x-extension-xht=userapp-Zen-QHGMK3.desktop;

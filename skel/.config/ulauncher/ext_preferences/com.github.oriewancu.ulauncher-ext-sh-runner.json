@@ -1,0 +1,12 @@
+{
+    "preferences": {
+        "python_command": "python3",
+        "scripts_dir": "$HOME/script, $HOME/Macros",
+        "terminal_emulator": "gnome-terminal"
+    },
+    "triggers": {
+        "sh_kw": {
+            "keyword": "sh"
+        }
+    }
+}

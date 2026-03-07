@@ -3,6 +3,7 @@ format = """
 $username\
 [](bg:#d08770 fg:#bf616a)\
 $directory\
+${custom.yazi}\
 [](fg:#d08770 bg:#ebcb8b)\
 $git_branch\
 $git_status\
@@ -22,6 +23,14 @@ $cmd_duration\
 continuation_prompt = '▶▶ '
 # Disable the blank line at the start of the prompt
 add_newline = false
+
+[env_var.yazi_level]
+description = "Indicate the shell was launched by `yazi`"
+variable = "YAZI_LEVEL"
+# 🦆: U+1f986 Duck
+# Alternatively: " ": U+E795 <Private Use>
+symbol = ""
+format = '[ $symbol ]($style)'
 
 [cmd_duration]
 min_time = 500

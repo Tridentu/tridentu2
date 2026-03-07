@@ -1,0 +1,10 @@
+{
+    "preferences": {
+        "triggers": {
+            "sp_kw": {
+                "keyword": "spd"
+            }
+        }
+    },
+    "triggers": {}
+}

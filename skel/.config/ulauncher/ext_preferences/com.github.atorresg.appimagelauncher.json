@@ -1,0 +1,10 @@
+{
+    "preferences": {
+        "ailauncher_directories": "~/Applications"
+    },
+    "triggers": {
+        "ailauncher_kw": {
+            "keyword": "aimg"
+        }
+    }
+}

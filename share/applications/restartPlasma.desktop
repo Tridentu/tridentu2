@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=Restart KDE Plasma
+Exec=kquitapp6 plasmashell && kstart plasmashell
+Icon=plasma
+Name=Restart Plasma
+Terminal=false
+Type=Application

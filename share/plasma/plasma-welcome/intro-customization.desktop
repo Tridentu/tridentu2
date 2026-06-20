@@ -1,0 +1,20 @@
+[Desktop Entry]
+# Required since this is a Desktop file; ignored
+Type=Application
+
+# Required; becomes the first paragraph on the Welcome page
+# Don't forget to offer translations of the text!
+Name=Welcome to Tridentu 2 1.5! This system is a Linux distribution based on Linux From Scratch (LFS).
+Name[fr]=This system is a Linux distribution based on Linux From Scratch (LFS).
+
+# Optional; replaces the default image on the Welcome page
+# can be an icon name or an absolute path to an image on disk beginning with file:/
+Icon=file:///usr/share/pixmaps/tridentu.png
+
+# Optional; replaces the default image caption on the Welcome page
+# Don't forget to offer translations of the text!
+Comment=Since this system is custom-made, it is RECOMMENDED that you take a look at the official wiki.
+Comment[fr]=Ce système étant personnalisé, il est RECOMMANDÉ de consulter le wiki officiel.
+
+# Optional; replaces the default URL opened when clicking on the Welcome page's image or icon
+URL=https://tridentu2.miraheze.org/wiki/Main_Page
